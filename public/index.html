@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Mini Full Stack</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+  </head>
+  <body ng-controller='homeCtrl'>
+
+    <!-- <button type="button" name="button" ng-click="getAllProducts()">Click Me for Cool Stuff</button> -->
+    <section>
+      <div class="products" ng-repeat="stuff in products">
+        <ul>
+          <li>Name: {{stuff.name}}</li>
+          <li>Price: {{stuff.price}}</li>
+          <li>{{stuff.description}}</li>
+        </ul>
+        <button type="button" name="button" ng-click="deleteProductFromInventory(stuff.id)">Delete Item from Inventory</button>
+      </div>
+    </section>
+    <hr>
+    <section>
+      <input type="text" name="name" value="PRODUCT NAME" ng-model="newProduct.name">
+      <input type="text" name="name" value="PRODUCT DESCRIPTION" ng-model="newProduct.description">
+      <input type="text" name="name" value="PRODUCT PRICE" ng-model="newProduct.price">
+      <input type="text" name="name" value="PRODUCT TYPE" ng-model="newProduct.type">
+      <button type="button" name="button" ng-click="addProductToInventory(newProduct)">Add Product</button>
+    </section>
+
+  <!-- scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+  <script src="./app/app.module.js"></script>
+  <script src="./app/components/home/homeCtrl.js"></script>
+  <script src="./app/components/home/homeService.js"></script>
+  </body>
+</html>
