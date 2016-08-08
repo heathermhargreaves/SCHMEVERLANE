@@ -5,13 +5,19 @@ body {
 .products {
   float:left;
   flex-direction: row;
-  max-width: 20vw;
+  width: 20vw;
+
 }
 
-section {
+.product-list {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-flow: wrap-reverse;;
   max-width: 100vw;
   padding-top: 10vh;
+
+}
+
+.product-input {
+  display: flex;
+  padding: 10%;
 }
