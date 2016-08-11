@@ -2,35 +2,161 @@
 <html ng-app="app">
   <head>
     <meta charset="utf-8">
-    <title>Mini Full Stack</title>
-    <link rel="stylesheet" href="assets/styles/styles.css">
-  </head>
-  <body ng-controller='homeCtrl'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Everlane clone | SchmeverLane</title>
 
-    <!-- <button type="button" name="button" ng-click="getAllProducts()">Click Me for Cool Stuff</button> -->
-    <section class="product-list">
-      <div class="products" ng-repeat="stuff in products">
-        <ul>
-          <li>Name: {{stuff.name}}</li>
-          <li>Price: {{stuff.price}}</li>
-          <li>{{stuff.description}}</li>
-        </ul>
-        <button type="button" name="button" ng-click="deleteProductFromInventory(stuff.id)">Delete Item from Inventory</button>
-      </div>
-    </section>
-    <hr>
-    <section class="product-input">
-      <input type="text" name="name" value="PRODUCT NAME" ng-model="newProduct.name">
-      <input type="text" name="name" value="PRODUCT DESCRIPTION" ng-model="newProduct.description">
-      <input type="text" name="name" value="PRODUCT PRICE" ng-model="newProduct.price">
-      <input type="text" name="name" value="PRODUCT TYPE" ng-model="newProduct.type">
-      <button type="button" name="button" ng-click="addProductToInventory(newProduct)">Add Product</button>
-    </section>
+    <!-- styles -->
+    <link rel="stylesheet" href="./assets/styles/reset.css">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <link rel="stylesheet" href="./assets/styles/landingview.css">
+
+    <base href="/">
+  </head>
+  <body>
+
+
+    <header class="site-header-container"><div class="site-header"><h1 class="site-header__logo-container">
+  <a href="/" title="Everlane">
+    <svg class="logo" alt="Everlane" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 432 40.6"><path d="M0,40.6V0H32.5V8.1H8.1v8.1H24.3v8.2H8.1v8.1H32.5v8.1H0Z"></path><path d="M67.7,40.6L51.4,0h8.7L71.8,28.9,83.3,0H92L75.8,40.6H67.7Z"></path><path d="M113.1,40.6V0h32.5V8.1H121.2v8.1h16.2v8.2H121.2v8.1h24.4v8.1H113.1Z"></path><path d="M199.3,22.8l5.8,17.8h-8.5l-5.3-16.2H177.1V40.6H169V0h24.3A12.16,12.16,0,0,1,202,3.5a11.61,11.61,0,0,1,3.5,8.7A11.68,11.68,0,0,1,199.3,22.8Zm-22.2-6.6h16.2a4,4,0,0,0,2.9-1.2,3.85,3.85,0,0,0,1.2-2.9A4.1,4.1,0,0,0,193.3,8H177.1v8.2Z"></path><path d="M229.6,40.6V0h8.1V32.5H258v8.1H229.6Z"></path><path d="M306.8,32.5H290.1l-3.3,8.1h-8.7L294.4,0h8.1l16.3,40.6h-8.7Zm-3.3-8.1-5.1-12.7-5.1,12.7h10.2Z"></path><path d="M375,0V40.6h-8.1l-20.3-27v27h-8.1V0h8.1l20.3,27V0H375Z"></path><path d="M399.5,40.6V0H432V8.1H407.6v8.1h16.2v8.2H407.6v8.1H432v8.1H399.5Z"></path></svg>
+  </a>
+</h1>
+
+<ul class="site-header__navigation">
+  <li class="site-header__top-level-menu-item">
+    <a href="/collections/womens-all" class="drop-down-indicator site-header__top-level-menu-link">
+      Women
+    </a>
+  </li>
+  <li class="site-header__top-level-menu-item" style="opacity: 1;">
+    <a href="/collections/mens-all" class="drop-down-indicator site-header__top-level-menu-link">
+      Men
+    </a>
+  </li>
+  <li class="site-header__top-level-menu-item">
+    <a href="/visit-us" class=" site-header__top-level-menu-link">
+      Visit&nbsp;Us
+    </a>
+  </li>
+  <li class="site-header__top-level-menu-item">
+    <a href="/factories" class=" site-header__top-level-menu-link">
+      Factories
+    </a>
+  </li>
+  <li class="site-header__top-level-menu-item" style="opacity: 1;">
+    <a href="/about" class=" site-header__top-level-menu-link">
+      About
+    </a>
+  </li>
+  </ul>
+
+  <div id="cart-drop-down" class="drop-down-menu hovercart" style="opacity: 0; position: absolute; top: 52px; left: 751.344px; display: none;"><div class="cart hovercart-list"><div><ul class="cart__js-preloader js-preloader hidden" data-component="LoadingAnimation">
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+</div>
+</div>
+
+<div class="hovercart-footer clearfix"><div>  <p class="empty-bag-message sixteen">
+    Your bag is empty.
+  </p>
+
+<ul class="shipping-message">
+
+    <li>Free U.S. Shipping on 2+ Items. Easy Returns</li>
+
+</ul>
+
+</div>
+</div>
+</div>
+
+<div class="account-bar account-bar"><div class="account-bar__message">
+  Free U.S. Shipping on 2+ Items. Easy Returns
+</div>
+
+<nav class="account-bar__nav">
+  <ul class="account-bar__links">
+      <li class="account-bar__nav-item">
+        <a href="#" class="account-bar__link account-bar__login-button" data-login-type="sign_in">Log In</a>
+      </li>
+  </ul>
+
+  <div class="cart-container">
+    <a href="/checkout/preview" class="cart-trigger drop-down-trigger js-check-order">
+
+    <svg class="bag-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+      <g>
+        <defs>
+          <rect id="SVGID_1_" width="40" height="40"></rect>
+        </defs>
+        <clipPath id="SVGID_2_">
+          <use xlink:href="#SVGID_1_" overflow="visible"></use>
+        </clipPath>
+
+        <path clip-path="url(#SVGID_2_)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+        M6.588,19.992c0,1.434-1.159,2.594-2.589,2.594"></path>
+
+        <path clip-path="url(#SVGID_2_)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+        M16.456,13.569c0-2.507,2.029-4.54,4.531-4.54c2.503,0,4.532,2.033,4.532,4.54"></path>
+
+        <path clip-path="url(#SVGID_2_)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+        M16.605,13.591h-3.403c-3.652,0-6.614,2.966-6.614,6.626v6.355l-0.614,2.967c0,0.791,0.64,1.433,1.429,1.433h27.166
+        c0.791,0,1.431-0.642,1.431-1.433l-0.614-3.171v-6.151c0-3.66-2.962-6.626-6.614-6.626h-3.253"></path>
+
+        <line clip-path="url(#SVGID_2_)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="21.936" y1="13.591" x2="16.457" y2="13.591"></line>
+      </g>
+    </svg>
+
+
+      <span class="fixed-bag-badge"></span>
+    </a>
+  </div>
+
+</nav>
+</div>
+</div>
+</header>
+
+
+<!-- UI view -->
+<main>
+  <ui-view></ui-view>
+</main>
+
+<!--
+        <nav>
+          <ul>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">WOMEN</a>
+              <div class="dropdown-content" id="myDropdown">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">MEN</a>
+              <div class="dropdown-content" id="myDropdown">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </li>
+            <li><a class="active" href="#">VISIT US</a></li>
+            <li><a href="#">FACTORIES</a></li>
+            <li><a href="#">ABOUT US</a></li>
+          </ul>
+        </nav> -->
+
 
   <!-- scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-  <script src="./app/app.module.js"></script>
-  <script src="./app/components/home/homeCtrl.js"></script>
-  <script src="./app/components/home/homeService.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+  <script src="public/app/app.module.js"></script>
+  <script src="public/app/app.routes.js"></script>
+  <!-- <script src="./app/components/home/homeCtrl.js"></script> -->
+  <!-- <script src="./app/components/home/homeService.js"></script> -->
   </body>
 </html>
