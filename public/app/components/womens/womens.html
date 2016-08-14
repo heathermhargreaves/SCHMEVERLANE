@@ -1,0 +1,31 @@
+<!-- <section ng-controller="womensCtrl" ng-repeat="title in womensProducts | unique:'product_name'">
+  <div class="product-title" >
+    <h3>{{title.product_name }}</h3>
+      <div class="product-by-color"  ng-repeat="product in products">
+          <p ng-repeat="color in product">
+            {{color.color}}
+          </p>
+      </div>
+  </div>
+</section> -->
+
+<section class="groupings" ng-contrller="womensCtrl" ng-repeat="(key, value) in products">
+
+    <h3 class="product-name">{{key}}</h3>
+    <div class="product-grouping">
+
+      <div class="product-display" ng-repeat="color in value">
+        <div class="product-image" src="http://everlane.imgix.net/i/23a52272_eec4.jpg">
+        </div>
+        <h6>
+          {{key}} - ${{color.price}}
+        </h6>
+        <p>
+          {{color.color}}
+        </p>
+
+      </div>
+
+    </div>
+
+</section>

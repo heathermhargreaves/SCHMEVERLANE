@@ -6,7 +6,12 @@ angular.module('app')
     $stateProvider
       .state('landing', {
         url: '/',
-        templateUrl: 'public/app/components/landing/landingView.html'
+        templateUrl: './app/components/landing/landingView.html'
+      })
+      .state('womens-all', {
+        url: '/womens-all',
+        templateUrl: './app/components/womens/womens.html',
+        controller: 'womensCtrl'
       });
 
 }); //end ruoter

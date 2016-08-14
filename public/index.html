@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/styles/reset.css">
     <link rel="stylesheet" href="./assets/styles/styles.css">
     <link rel="stylesheet" href="./assets/styles/landingview.css">
+    <link rel="stylesheet" href="./assets/styles/product_groupings.css">
 
     <base href="/">
   </head>
@@ -16,7 +17,7 @@
 
 
     <header class="site-header-container"><div class="site-header"><h1 class="site-header__logo-container">
-  <a href="/" title="Everlane">
+  <a href="/public/#/" title="Everlane">
     <svg class="logo" alt="Everlane" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 432 40.6"><path d="M0,40.6V0H32.5V8.1H8.1v8.1H24.3v8.2H8.1v8.1H32.5v8.1H0Z"></path><path d="M67.7,40.6L51.4,0h8.7L71.8,28.9,83.3,0H92L75.8,40.6H67.7Z"></path><path d="M113.1,40.6V0h32.5V8.1H121.2v8.1h16.2v8.2H121.2v8.1h24.4v8.1H113.1Z"></path><path d="M199.3,22.8l5.8,17.8h-8.5l-5.3-16.2H177.1V40.6H169V0h24.3A12.16,12.16,0,0,1,202,3.5a11.61,11.61,0,0,1,3.5,8.7A11.68,11.68,0,0,1,199.3,22.8Zm-22.2-6.6h16.2a4,4,0,0,0,2.9-1.2,3.85,3.85,0,0,0,1.2-2.9A4.1,4.1,0,0,0,193.3,8H177.1v8.2Z"></path><path d="M229.6,40.6V0h8.1V32.5H258v8.1H229.6Z"></path><path d="M306.8,32.5H290.1l-3.3,8.1h-8.7L294.4,0h8.1l16.3,40.6h-8.7Zm-3.3-8.1-5.1-12.7-5.1,12.7h10.2Z"></path><path d="M375,0V40.6h-8.1l-20.3-27v27h-8.1V0h8.1l20.3,27V0H375Z"></path><path d="M399.5,40.6V0H432V8.1H407.6v8.1h16.2v8.2H407.6v8.1H432v8.1H399.5Z"></path></svg>
   </a>
 </h1>
@@ -154,8 +155,15 @@
   <!-- scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
-  <script src="public/app/app.module.js"></script>
-  <script src="public/app/app.routes.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.9/angular-filter.js"></script>
+  <script src="./app/app.module.js"></script>
+  <script src="./app/app.routes.js"></script>
+  <script src="./app/components/filters/trustedfilter.js"></script>
+  <script src="./app/components/womens/womensCtrl.js"></script>
+  <script src="./app/components/womens/womensService.js"></script>
+
+
   <!-- <script src="./app/components/home/homeCtrl.js"></script> -->
   <!-- <script src="./app/components/home/homeService.js"></script> -->
   </body>

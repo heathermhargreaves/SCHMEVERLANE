@@ -1,0 +1,35 @@
+.groupings {
+  width: 100%;
+}
+
+.product-name {
+  color: #4C4C4E;
+  font-family: 'csb', 'Century Schoolbook', Georgia, serif;
+  text-align: center;
+}
+
+.product-grouping {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-display {
+  display: block;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 30%;
+  height: 30vh;
+  margin: 3.33vw;
+}
+.product-display p {
+  text-align: center;
+}
+.product-display h6 {
+  text-align: center;
+  font-size: .75em;
+}
+
+.product-image {
+  width: 100%;
+  height: 90%;
+}
