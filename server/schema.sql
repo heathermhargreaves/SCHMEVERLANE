@@ -22,3 +22,7 @@ CREATE TABLE cart
   id SERIAL PRIMARY KEY NOT NULL,
   products_id int references products
 );
+
+
+
+-- id SERIAL PRIMARY KEY NOT NULL,

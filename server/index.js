@@ -28,9 +28,9 @@ app.get('/womens-all', function(req, res, next) {
   });
 });
 
-//find a particular product
-app.get('/products/:id', function(req, res, next) {
-  db.get_product_by_name(req.params.name, function(err, product){
+//find a particular womens product
+app.get('/womens-all/:id', function(req, res, next) {
+  db.get_product_by_name(req.params.id, function(err, product){
     res.status(200).send(product);
   });
 });

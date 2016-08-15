@@ -1,3 +1,3 @@
 SELECT *
-FROM products
-WHERE name = $1;
+FROM everlane_products
+WHERE id = $1;

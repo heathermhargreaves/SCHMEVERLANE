@@ -1,31 +1,31 @@
-<!-- <section ng-controller="womensCtrl" ng-repeat="title in womensProducts | unique:'product_name'">
-  <div class="product-title" >
-    <h3>{{title.product_name }}</h3>
-      <div class="product-by-color"  ng-repeat="product in products">
-          <p ng-repeat="color in product">
-            {{color.color}}
-          </p>
-      </div>
-  </div>
-</section> -->
 
-<section class="groupings" ng-contrller="womensCtrl" ng-repeat="(key, value) in products">
+<div class="cp-content">
+  <div class="ratio-28-9">
+    <a href=""></a>
+  </div>
+</div>
+
+  <section class="groupings" ng-repeat="(key, value) in products">
 
     <h3 class="product-name">{{key}}</h3>
     <div class="product-grouping">
 
-      <div class="product-display" ng-repeat="color in value">
-        <div class="product-image" src="http://everlane.imgix.net/i/23a52272_eec4.jpg">
-        </div>
-        <h6>
-          {{key}} - ${{color.price}}
-        </h6>
-        <p>
-          {{color.color}}
-        </p>
 
-      </div>
+        <div class="product-display" ng-repeat="color in value">
+          <div class="product-image" ng-src="{{color.image | trusted}}"
+           ui-sref="womens-product({ id: color.id })" >
+          </div>
+          <h6>
+            {{key}} - ${{color.price}}
+          </h6>
+          <button type="button" name="button" ng-click="getWomensProduct(id)">clicky</button>
+          <p>
+            {{color.color}}
+          </p>
+        </div> <!--end product display -->
 
-    </div>
+
+
+       </div> <!--end product grouping -->
 
 </section>
