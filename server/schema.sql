@@ -14,15 +14,37 @@ CREATE TABLE everlane_products (
     description_size text,
     description_materials text,
     image_urls_list text[],
+    video text,
     transparent_pricing_url text
 );
 
-CREATE TABLE cart
+productid SERIAL PRIMARY KEY NOT NULL,
+
+
+
+CREATE TABLE orders
 (
-  id SERIAL PRIMARY KEY NOT NULL,
-  products_id int references products
+  orderid SERIAL PRIMARY KEY NOT NULL,
+  userid int references users,
+  orderdate timestamp with time zone
 );
 
+CREATE TABLE order_lines
+(
+  orderlineid SERIAL PRIMARY KEY NOT NULL,
+  orderid int references orders,
+  productid int references everlane_products,
+  quantity integer
+);
+
+CREATE TABLE users
+(
+  userid SERIAL PRIMARY KEY NOT NULL,
+  facebookid text,
+  firstName text,
+  lastName text,
+  dateJoined timestamp with time zone
+);
 
 
 -- id SERIAL PRIMARY KEY NOT NULL,

@@ -1,1 +1,1 @@
-angular.module('app', ['ui.router', 'angular.filter']);
+angular.module('app', ['ui.router', 'angular.filter', 'ngDialog']);

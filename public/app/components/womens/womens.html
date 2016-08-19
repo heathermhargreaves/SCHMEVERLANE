@@ -12,13 +12,13 @@
 
 
         <div class="product-display" ng-repeat="color in value">
-          <div class="product-image" ng-src="{{color.image | trusted}}"
-           ui-sref="womens-product({ id: color.id })" >
-          </div>
+          <img class="product-image" src="{{color.image | trusted}}"
+          ng-click="getWomensProduct(id)" ui-sref="womens-product({ id: color.id })">
+        </img>
           <h6>
             {{key}} - ${{color.price}}
           </h6>
-          <button type="button" name="button" ng-click="getWomensProduct(id)">clicky</button>
+
           <p>
             {{color.color}}
           </p>

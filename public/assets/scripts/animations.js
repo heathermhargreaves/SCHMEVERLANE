@@ -16,4 +16,10 @@ toggle between hiding and showing the dropdown content */
 //       }
 //     }
 //   }
-// }
+
+
+$(document).ready(function(){
+
+
+
+}); //end jquery

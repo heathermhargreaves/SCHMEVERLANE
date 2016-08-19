@@ -6,15 +6,22 @@
     <title>Everlane clone | SchmeverLane</title>
 
     <!-- styles -->
-    <link rel="stylesheet" href="./assets/styles/reset.css">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <!--  use instead of all the other link sheet tags when done -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.2/css/ngDialog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.2/css/ngDialog-theme-default.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.2/css/ngDialog-theme-plain.css">
+    <!-- <link rel="stylesheet" href="./assets/styles/reset.css">
     <link rel="stylesheet" href="./assets/styles/styles.css">
     <link rel="stylesheet" href="./assets/styles/landingview.css">
     <link rel="stylesheet" href="./assets/styles/product_groupings.css">
+    <link rel="stylesheet" href="./assets/styles/productview.css">
+    <link rel="stylesheet" href="./assets/styles/modal.css"> -->
 
-    <base href="/">
+    <!-- <base href="/"> -->
   </head>
-  <body>
-
+  <body ng-controller='mainCtrl'>
 
     <header class="site-header-container"><div class="site-header"><h1 class="site-header__logo-container">
   <a href="/" title="Everlane">
@@ -80,7 +87,7 @@
 <nav class="account-bar__nav">
   <ul class="account-bar__links">
       <li class="account-bar__nav-item">
-        <a href="#" class="account-bar__link account-bar__login-button" data-login-type="sign_in">Log In</a>
+        <a ng-click="clickToLogin()" class="account-bar__link account-bar__login-button">Log In</a>
       </li>
   </ul>
 
@@ -153,18 +160,25 @@
 
 
   <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.9/angular-filter.js"></script>
-  <script src="./app/app.module.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.2/js/ngDialog.js"></script>
+  <!-- <script src="./app/app.module.js"></script>
   <script src="./app/app.routes.js"></script>
+  <script src="./assets/scripts/animations.js"></script>
   <script src="./app/components/filters/trustedfilter.js"></script>
   <script src="./app/components/womens/womensCtrl.js"></script>
   <script src="./app/components/womens/womensService.js"></script>
-  <script src="./app/components/womens_product/womens_productCtrl.js"></script>
-  <script src="./app/components/womens_product/womens_productService.js"></script>
+  <script src="./app/components/main/mainCtrl.js"></script>
 
+  <script src="./app/components/womens_product/womens_productCtrl.js"></script>
+  <script src="./app/components/womens_product/womens_productService.js"></script> -->
+
+  <script src='./bundle.js'></script> <!--  use instead of all the other script tags when done -->
   <!-- <script src="./app/components/home/homeCtrl.js"></script> -->
   <!-- <script src="./app/components/home/homeService.js"></script> -->
   </body>

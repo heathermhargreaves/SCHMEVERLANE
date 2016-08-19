@@ -1,0 +1,77 @@
+.cp-full-layout {
+    background-image: url("https://everlane-2.imgix.net/static/hero_assets/20160811_smokingloafer_hero.jpg");
+    min-height: 500px;
+    height: 100vh;
+    background-size: contain;
+    background-size: cover;
+}
+
+.cp-full-layout {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+    width: 100%;
+}
+
+.title h1 {
+    color: #FFF;
+    font-size: 7.6vw;
+    line-height: 8vw;
+    letter-spacing: -0.5px;
+}
+
+.cp-full-content h1 {
+    font-weight: normal;
+    font-family: 'csb', 'Century Schoolbook', Georgia, serif;
+    font-style: normal;
+    letter-spacing: 2px;
+    color: #FFF;
+}
+
+
+.cp-full-content {
+    top: 42%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.cp-full-layout .cp-full-content {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+p {
+    color: #4C4C4E;
+    font-size: 2.2vw;
+    margin-bottom: 0px;
+    line-height: 4vw;
+}
+
+.cp-full-content a {
+    font-size: 10px;
+    margin-top: 19px;
+    border: 1px solid #fff;
+    background: #fff;
+    color: #505050;
+    text-decoration: none;
+    border-radius: 0px;
+    min-width: 0px;
+    line-height: 15px;
+    padding: 12px 25px 12px 24px;
+    font-family: 'graphik', 'Helvetica Neue', 'Helvetica Neue LT STD', 'Helvetica', 'Helvetica LT STD', 'Arial', 'sans-serif';
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 13px;
+    line-height: 21.034px;
+    margin: 0 0 1.6154em 0;
+}

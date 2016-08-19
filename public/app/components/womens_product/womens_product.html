@@ -1,8 +1,78 @@
-<section ng-controller="womensProductCtrl">
-  {{data.name}}
+<section class="product-gallery">
+  <!-- {{womensProduct.featured_type}}
+  {{womensProduct.price}} -->
+  <!-- product thumbnail gallery -->
+<div class="product-gallery-thumbs col-xs-1" >
+  <img class="product-thumb" ng-repeat="image in assets" src="{{image}}">
 
-  testing
+    <!-- ng-repeat="thumb in assets" -->
+  </img>
+</div>
 
-  <button type="button" name="button" ng-click="getWomensProduct(color.id)">click me</button>
+<!-- product image gallery -->
+<div class="product-gallery-assets col-xs-7">
+  <img class="product-asset" ng-repeat="image in assets" src="{{image}}">
+
+  </img>
+</div>
+
+<!-- product info -->
+<div class="product-gallery-info col-xs-4">
+  <h3>{{womensProduct.product_name}}</h3>
+  <h3>{{womensProduct.price | currency:"$":0}}</h3>
+
+  <!-- product colors -->
+  <div class="color-swatches" >
+
+  </div>
+
+  <!--product sizes -->
+  <section class="sizes-section" ng-show='womensProductSizes'>
+    <h4>SIZE GUIDE</h4>
+    <div class="product-sizes">
+      <div class="product-size" ng-repeat="size in womensProduct.sizes track by $index">
+        <div>
+          <input class="size-select" type="submit" value="{{size}}" ng-model="sizeId" ng-click="selectSize($index)">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <button type="button" class="add-to-cart" ng-click="addToCart(womensProduct.id)">Add to bag</button>
+
+  <div class="product-page__info">
+    <span class="product-info__headline">Details</span>
+    <section class="product-details">
+      <ul class="product-details__container">
+        <li class="product-details__item product-details__item--fabric">
+          <span>{{womensProduct.description_materials}}</span>
+          <span class="product-details__divider"> </span>
+        </li>
+          <li class="product-details__item product-details__item--factory">
+            <span>Made in {{womensProduct.factory}}</span>
+            <a href="/factories/cashmere" class="product-detail__link product-details__divider" target="_blank">
+                See the factory
+            </a>
+          </li>
+          <li class="product-details__item product-details__item--email">
+            <span>Questions?</span>
+            <a href="mailto:support@everlane.com?subject=The {{womensProduct.product_name}} Question" class="product-detail__link">
+              <span>Email</span>
+              <span>support@everlane.com</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="product-page__info">
+      <span class="product-info__headline">Description</span>
+        <section class="product-description">
+          <p class="product-description__container">{{womensProduct.description_main}}</p>
+        </section>
+    </div>
+
+  </div> <!-- end product info div -->
 
 </section>
