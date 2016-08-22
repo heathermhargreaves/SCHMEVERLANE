@@ -14,7 +14,7 @@ angular.module('app')
                 color: response[i].color,
                 image: response[i].main_image_url,
                 price: response[i].price,
-                id: response[i].id
+                id: response[i].productid
               }];
             }
             else {
@@ -22,7 +22,7 @@ angular.module('app')
                 color: response[i].color,
                 image: response[i].main_image_url,
                 price: response[i].price,
-                id: response[i].id
+                id: response[i].productid
               });
             }
           }

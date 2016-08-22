@@ -16,7 +16,7 @@ angular.module('app')
       console.log(id);
       return $http({
         method: 'GET',
-        url: '/checkout/preview/' + id
+        url: '/checkout/preview'
       }).then(function(response) {
         console.log(response);
         return response.data;

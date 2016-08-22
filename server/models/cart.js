@@ -11,4 +11,6 @@ module.exports = function Cart() {
     this.totalPrice += item.price;
   }
 
+  //make this way more simple, just an array of items, and then do calculations on scope
+
 };

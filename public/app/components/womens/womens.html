@@ -14,6 +14,7 @@
         <div class="product-display" ng-repeat="color in value">
           <img class="product-image" src="{{color.image | trusted}}"
           ng-click="getWomensProduct(id)" ui-sref="womens-product({ id: color.id })">
+        text  {{id}}
         </img>
           <h6>
             {{key}} - ${{color.price}}

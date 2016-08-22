@@ -31,7 +31,7 @@ passport.use(new facebookStrategy({
         var date_joined = new Date();
         db.users.insert({facebookid: profile.id, firstname: first_name, lastname: last_name, datejoined: date_joined, email: user.email}, function(err, user) {
           console.log('user created', user);
-        })
+        });
       }
     })
 
@@ -96,7 +96,7 @@ app.get('/womens-all', productCtrl.getAllWomensProducts);
 app.get('/womens-all/:id', productCtrl.getOneWomensProduct);
 
 //add to cart preview
-app.get('/checkout/preview/:id', function(req, res, next) {
+app.get('/checkout/preview', function(req, res, next) {
   var productId = req.params.id;
   // console.log(req.session.cart);
   //
@@ -105,14 +105,16 @@ app.get('/checkout/preview/:id', function(req, res, next) {
   // console.log(cart);
 
   // check to see if there's a cart on req.session, if not create it
+
   if(!req.session.cart) req.session.cart = new Cart();
-  console.log(req.session.cart);
+  console.log(typeof req.session.cart.getTotal);
 
   db.get_product_by_name(req.params.id, function(err, product) {
     if(err) {
       console.log(err);
       return res.redirect('/');
     }
+
     // pass item from database into getTotal function to get total and change quantity
     req.session.cart.getTotal(product[0]);
     // push product into the items array on the session cart
