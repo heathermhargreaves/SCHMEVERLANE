@@ -1,6 +1,5 @@
-Select *
-From order_lines
-Join orders
-Where orderid.orders = orderid.orderlines;
-join users
-where userid.users = userid.orders;
+Select sum(price)
+From everlane_products
+Join cart on cart.productid = everlane_products.productid
+Join users on users.userid = cart.userid
+Where cart.userid = $1;

@@ -10,7 +10,6 @@ angular.module('app')
       console.log($scope.womensProduct);
       $scope.assets = response[0].image_urls_list;
       $scope.images = response[0].image_urls_list;
-      // console.log($scope.assets);
 
       if($scope.womensProduct.sizes.length === 0) {
         $scope.womensProductSizes = false;
@@ -18,9 +17,7 @@ angular.module('app')
       else {
         $scope.womensProductSizes = true;
       }
-      // console.log($scope.womensProductSizes);
-      // product = $scope.womensProduct;
-      // console.log(product);
+
     });
 
 
@@ -52,9 +49,7 @@ angular.module('app')
 
       womensProductService.addToCart(selectedProduct)
         .then(function(response) {
-          console.log(response);
           $scope.cart = response;
-          // $scope.cart.id.push($scope.size);
           console.log($scope.cart);
         })
     }

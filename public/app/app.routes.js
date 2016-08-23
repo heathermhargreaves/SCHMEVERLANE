@@ -53,8 +53,8 @@ angular.module('app')
       .state('womens-product', {
         url: '/womens-all/:id',
         templateUrl: './app/components/womens_product/womens_product.html',
-         controller: 'womensProductCtrl',
-         resolve: {
+        controller: 'womensProductCtrl',
+        resolve: {
            checkUser: function(mainService) {
              return mainService.checkUser()
               .then(function(response) {
@@ -74,8 +74,8 @@ angular.module('app')
       })
       .state('checkout-preview', {
         url: '/checkout-preview',
-        templateUrl: './app/components/checkout_preview/checkoutpreview.html'
-
+        templateUrl: './app/components/checkout_preview/checkoutpreview.html',
+        controller: 'checkoutpreviewCtrl'
       })
 
 }); //end ruoter

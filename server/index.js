@@ -62,7 +62,6 @@ var db = app.get('db');
 
 //controllers
 var orderCtrl = require('./controllers/orderCtrl')
-var orderlineCtrl = require('./controllers/orderlineCtrl')
 var productCtrl = require('./controllers/productCtrl')
 var userCtrl = require('./controllers/userCtrl')
 
@@ -101,43 +100,17 @@ app.get('/womens-all', productCtrl.getAllWomensProducts);
 //find a particular womens product
 app.get('/womens-all/:id', productCtrl.getOneWomensProduct);
 
+//get cart for specific user by userid
+app.get('/cart', orderCtrl.get_cart);
 
-//add to cart preview
-app.get('/checkout/preview', function(req, res, next) {
-  var productId = req.params.id;
-  // console.log(req.session.cart);
-  //
-  // var cart = new Cart(req.session.cart ? req.session.cart: {});
-  //
-  // console.log(cart);
+//get cart total for specific user
+app.get('/cart/total', orderCtrl.get_total_price);
 
-  // check to see if there's a cart on req.session, if not create it
-
-  if(!req.session.cart) req.session.cart = new Cart();
-  console.log(typeof req.session.cart.getTotal);
-
-  db.get_product_by_name(req.params.id, function(err, product) {
-    if(err) {
-      console.log(err);
-      return res.redirect('/');
-    }
-
-    // pass item from database into getTotal function to get total and change quantity
-    req.session.cart.getTotal(product[0]);
-    // push product into the items array on the session cart
-    req.session.cart.items.push(product[0]);
-
-    // cart.add(product, product.id);
-    // req.session.cart = cart;
-    // console.log(cart)
-    // // res.redirect('/');
-    res.send(req.session.cart);
-  });
-});
 
 ////////////////////////////////////////////////////
 ///////// POST ENDPOINTS //////////////////////
 
+//add item to cart
 app.post('/cart', orderCtrl.add_product_to_cart);
 
 
