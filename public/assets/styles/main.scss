@@ -71,6 +71,10 @@ li.dropdown {
     color: rgb(76, 76, 75);
 }
 
+.site-header a:hover {
+    color: rgb(76, 76, 75);
+}
+
 .site-header {
     z-index: 14;
     transition-property: background-color, color;

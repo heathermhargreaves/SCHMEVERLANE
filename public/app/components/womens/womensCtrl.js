@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('womensCtrl', function($scope, trustedFilter, womensService) {
+  .controller('womensCtrl', function($scope, trustedFilter, womensService, checkUser) {
 
     $scope.getAllWomensProducts = function() {
       womensService.getAllWomensProducts()
@@ -26,10 +26,11 @@ angular.module('app')
               });
             }
           }
-          console.log($scope.products);
+          // console.log($scope.products);
         });
     };
     $scope.getAllWomensProducts();
 
-
+    console.log(checkUser);
+    $scope.userNotLogged = checkUser;
   }); //end controller

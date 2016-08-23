@@ -3,7 +3,9 @@
   min-height: 500px;
   height: 100vh;
   background-size: contain;
-  background-size: cover; }
+  background-size: cover;
+  position: fixed;
+  top: 0; }
 
 .cp-full-layout {
   background-position: center;
@@ -11,6 +13,9 @@
   background-size: cover;
   min-height: 100%;
   width: 100%; }
+
+navbar-dir:hover {
+  background: white; }
 
 .title h1 {
   color: #FFF;
@@ -132,6 +137,9 @@ li.dropdown {
   position: relative; }
 
 .site-header:hover {
+  color: #4c4c4b; }
+
+.site-header a:hover {
   color: #4c4c4b; }
 
 .site-header {
@@ -274,7 +282,7 @@ a {
   line-height: 22.652px;
   font-family: 'csb', 'Century Schoolbook', Georgia, serif;
   text-align: center;
-  padding: 40px 30px 30px 50px; }
+  padding: 40px 30px 30px 40px; }
 
 .facebook-flat {
   width: 100%;

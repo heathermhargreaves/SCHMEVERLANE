@@ -4,6 +4,8 @@
     height: 100vh;
     background-size: contain;
     background-size: cover;
+    position: fixed;
+    top: 0;
 }
 
 .cp-full-layout {
@@ -12,6 +14,11 @@
     background-size: cover;
     min-height: 100%;
     width: 100%;
+
+}
+
+navbar-dir:hover {
+  background: white;
 }
 
 .title h1 {

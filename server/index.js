@@ -29,11 +29,15 @@ passport.use(new facebookStrategy({
         first_name = names.shift();
         last_name = names.join(' ');
         var date_joined = new Date();
-        db.users.insert({facebookid: profile.id, firstname: first_name, lastname: last_name, datejoined: date_joined, email: user.email}, function(err, user) {
+        db.users.insert({facebookid: profile.id, firstname: first_name, lastname: last_name, datejoined: date_joined, email: profile.email}, function(err, user) {
           console.log('user created', user);
         });
       }
-    })
+      else {
+        console.log(user);
+        return next(null, user);
+      }
+    });
 
     // return next(null, profile);
 }));
@@ -81,7 +85,9 @@ passport.deserializeUser(function(obj, done) {
 });
 
 app.get('/me', function(req, res, next) {
-  res.send(req.user);
+  console.log(req.user);
+  if(req.user) res.send(req.user);
+  else res.send('no user found');
 });
 
 
@@ -94,6 +100,7 @@ app.get('/womens-all', productCtrl.getAllWomensProducts);
 
 //find a particular womens product
 app.get('/womens-all/:id', productCtrl.getOneWomensProduct);
+
 
 //add to cart preview
 app.get('/checkout/preview', function(req, res, next) {
@@ -131,7 +138,7 @@ app.get('/checkout/preview', function(req, res, next) {
 ////////////////////////////////////////////////////
 ///////// POST ENDPOINTS //////////////////////
 
-
+app.post('/cart', orderCtrl.add_product_to_cart);
 
 
 /////////////////////////////////////////////////////

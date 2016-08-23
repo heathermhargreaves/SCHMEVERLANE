@@ -20,31 +20,43 @@ CREATE TABLE everlane_products (
 
 productid SERIAL PRIMARY KEY NOT NULL,
 
+-- CREATE TABLE carts
+-- (
+--   cartid SERIAL PRIMARY KEY NOT NULL,
+--   userid int references users,
+--   productid int references everlane_products,
+--   orderdate timestamp with time zone,
+--   size text
+-- );
 
 
-CREATE TABLE orders
+CREATE TABLE cart
 (
-  orderid SERIAL PRIMARY KEY NOT NULL,
-  userid int references users,
-  orderdate timestamp with time zone
+  cartid SERIAL PRIMARY KEY NOT NULL,
+  userid int references users (userid),
+  productid int references everlane_products (productid),
+  orderdate timestamp with time zone,
+  size text
 );
 
-CREATE TABLE order_lines
-(
-  orderlineid SERIAL PRIMARY KEY NOT NULL,
-  orderid int references orders,
-  productid int references everlane_products,
-  quantity integer
-);
-
+-- CREATE TABLE order_lines
+-- (
+--   orderlineid SERIAL PRIMARY KEY NOT NULL,
+--   orderid int references orders (orderid),
+--   productid int references everlane_products,
+--   quantity integer
+-- );
+--
 CREATE TABLE users
 (
   userid SERIAL PRIMARY KEY NOT NULL,
   facebookid text,
   firstName text,
   lastName text,
-  dateJoined timestamp with time zone
+  dateJoined timestamp with time zone,
+  email text
 );
+
 
 
 -- id SERIAL PRIMARY KEY NOT NULL,

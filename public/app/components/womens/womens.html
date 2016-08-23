@@ -1,3 +1,4 @@
+<navbar-dir></navbar-dir>
 
 <div class="cp-content">
   <div class="ratio-28-9">
@@ -14,8 +15,8 @@
         <div class="product-display" ng-repeat="color in value">
           <img class="product-image" src="{{color.image | trusted}}"
           ng-click="getWomensProduct(id)" ui-sref="womens-product({ id: color.id })">
-        text  {{id}}
-        </img>
+          </img>
+
           <h6>
             {{key}} - ${{color.price}}
           </h6>

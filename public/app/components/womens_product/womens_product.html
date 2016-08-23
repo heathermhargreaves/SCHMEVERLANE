@@ -1,3 +1,5 @@
+<navbar-dir></navbar-dir>
+
 <section class="product-gallery">
   <!-- {{womensProduct.featured_type}}
   {{womensProduct.price}} -->
@@ -32,14 +34,14 @@
     <div class="product-sizes">
       <div class="product-size" ng-repeat="size in womensProduct.sizes track by $index">
         <div>
-          <input class="size-select" type="submit" value="{{size}}" ng-model="sizeId" ng-click="selectSize($index)">
+          <input class="size-select" type="submit" value="{{size}}" ng-model="sizeId" ng-click="womensProduct.selectedSize = size">
         </div>
       </div>
     </div>
   </section>
 
 
-  <button type="button" class="add-to-cart" ng-click="addToCart(womensProduct.productid)">Add to bag</button>
+  <button type="button" class="add-to-cart" ng-click="addToCart(womensProduct)">Add to bag</button>
 
   <div class="product-page__info">
     <span class="product-info__headline">Details</span>
