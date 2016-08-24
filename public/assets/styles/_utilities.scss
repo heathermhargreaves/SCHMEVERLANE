@@ -1,0 +1,48 @@
+//==================================
+//Global utilities
+//==================================
+
+
+// Calculate em values
+@function em($target, $context: $base__font-size) {
+  @return ($target / $context) * 1em;
+}
+
+
+// Call the color palette modifiers
+
+@function palette($palette, $shade: 'base') {
+  @return map-get(map-get($palettes, $palette), $shade);
+}
+
+//call like this: palette(grey, x-dark)
+
+
+// Mixins
+@mixin bg-color($map) {
+  @each $theme, $color in $map {
+    &--#{$theme} {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin img-replace($img, $w, $h, $disp: block) {
+  background-image: url('#{path--rel}/#{$img}');
+  background-repeat: no-repeat;
+  width: $w;
+  height: $h;
+  display: $disp;
+}
+
+@mixin p-el (
+    $el,
+    $el-w: null,
+    $el-h: null) {
+      &: #{$el} {
+        @extend %pseudos;
+        width: $el-w;
+        height: $el-h;
+        @content;
+      }
+    }

@@ -34,10 +34,6 @@ angular.module('app')
     $scope.addToCart = function(product) {
       console.log(product);
 
-      //make sure they have size, if they don't,
-      //if there is a size option, make sure they select, if there is a size option and they don't select, don't let them run 'addtocart'
-      //if there is a size and they have selected, take that value, and put it on the object
-      //send that object back to service
       if(!product.selectedSize) {
         product.selectedSize = null;
       }
@@ -51,9 +47,10 @@ angular.module('app')
         .then(function(response) {
           $scope.cart = response;
           console.log($scope.cart);
-        })
-    }
+        });
+    };
 
     console.log(checkUser);
     $scope.userNotLogged = checkUser;
+    
   }); //end controller

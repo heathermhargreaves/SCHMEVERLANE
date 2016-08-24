@@ -1,0 +1,51 @@
+// =======================================
+// GLOBAL config
+// =======================================
+
+// Font Stacks
+$font-family--oldschool:     'csb', 'Century Schoolbook', Georgia, serif;
+$font-family--primary:       'graphik', 'Helvetica Neue', 'Helvetica Neue LT STD', 'Helvetica', 'Helvetica LT STD', 'Arial', 'sans-serif';
+
+//Font Weights
+
+$font-weight--thin:     100;
+$font-weight--light:    300;
+$font-weight--medium:   500;
+$font-weight--bold:     700;
+$font-weight--ultrabold:900;
+
+
+// Descriptive Base Colors
+
+$white:     #fff;
+$black:     #0b0b0b;
+$steel:     #4C4C4E;
+$dark-gray: #505050;
+$light-gray: #a3a5a7;
+$primary-gray: #808284;
+
+$facebook-blue: #3b5998;
+$facebook-dark-blue: #294172;
+
+
+// Color Palette modifiers
+
+$palettes:(
+  steel: (
+    xx-light  : lighten($steel, 50%),
+    x-light   : lighten($steel, 35%),
+    xx-light  : lighten($steel, 12%),
+    base      : $steel,
+    dark      : darken($steel, 8%),
+    x-dark    : darken($steel, 16%)
+  ),
+  black: (
+    light     : lighten($black, 10%),
+    base      : $black,
+    dark      : darken($black, 10%),
+  )
+);
+
+
+// Path to assets
+$path--rel    : "../img";

@@ -1,3 +1,13 @@
-<div class="">
-  <h1>HELLOOOOOOOOOO</h1>
-</div>
+<navbar-dir></navbar-dir>
+
+<section class="checkout-preview">
+  <a ui-sref="womens-all">Back to shopping</a>
+
+  <div class="checkout-list" ng-repeat="product in cartItemsDetails" ng-repeat="item in cartItems">
+    <img class='checkout-list-thumbnail' src="{{product.main_image_url}}">
+    <p>Size: {{item.selectedSize}}</p>
+    <p>Color: {{product.color}}</p>
+  </div>
+
+
+</section>

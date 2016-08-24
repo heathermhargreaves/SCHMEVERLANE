@@ -75,7 +75,26 @@ angular.module('app')
       .state('checkout-preview', {
         url: '/checkout-preview',
         templateUrl: './app/components/checkout_preview/checkoutpreview.html',
-        controller: 'checkoutpreviewCtrl'
+        controller: 'checkoutpreviewCtrl',
+        resolve: {
+          checkUser: function(mainService) {
+            return mainService.checkUser()
+             .then(function(response) {
+              //  console.log("hi", response);
+               if(response.userid) {
+                 console.log(response.firstname);
+                //  $scope.firstname = response.firstname;
+                //  console.log(firstname);
+                 return true;
+               }
+
+               else {
+                //  console.log('bye');
+                 return false;
+               }
+             });
+          }
+        }
       })
 
 }); //end ruoter
