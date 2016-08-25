@@ -19,8 +19,15 @@ module.exports = {
 
     get_total_price: function(req, res, next) {
       db.get_order_total(req.user.userid, function(err, total) {
-        res.status(200).send(total)
-      })
+        res.status(200).send(total);
+      });
+    },
+
+    delete_product_from_cart: function(req, res, next) {
+      console.log(req.params.id);
+      db.delete_product_from_cart(req.params.id, function(err, products) {
+        res.status(200).send('heyyy');
+      });
     }
 
 }; //end controller

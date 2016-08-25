@@ -33,11 +33,22 @@ angular.module('app')
       $scope.getCartTotal = function() {
         checkoutpreviewService.getCartTotal()
           .then(function(response) {
-            console.log(response)
+            console.log(response);
             // return response.data;
             $scope.orderTotal = response.data;
           })
       }
       $scope.getCartTotal();
+
+      $scope.deleteItemFromCart = function(id) {
+        console.log(id);
+        checkoutpreviewService.deleteItemFromCart(id)
+          .then(function(response) {
+            console.log(response);
+            $scope.getCart();
+          })
+
+      }
+
 
   }); // end controller

@@ -3,10 +3,17 @@
 <section class="checkout-preview">
   <a ui-sref="womens-all">Back to shopping</a>
 
-  <div class="checkout-list" ng-repeat="product in cartItemsDetails" ng-repeat="item in cartItems">
-    <img class='checkout-list-thumbnail' src="{{product.main_image_url}}">
+  <div class="checkout-list" ng-repeat="product in cartItems">
+  <!-- merge the cartItems array above to cartItemsDetails with map -->
+<!-- ng-repeat="product in cartItemsDetail" -->
+    <div class="checkout-list-thumbnail">
+      <img  src="{{product.main_image_url}}">
+    </div>
+
+    <p>{{product.product_name}}<a class="delete-item" ng-click="deleteItemFromCart(product.cartid)">x</a></p>
     <p>Size: {{item.selectedSize}}</p>
     <p>Color: {{product.color}}</p>
+
   </div>
 
 

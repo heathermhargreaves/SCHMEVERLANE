@@ -22,5 +22,16 @@ angular.module('app')
       });
     };
 
+    this.deleteItemFromCart = function(id) {
+      console.log(id);
+      return $http({
+        method: 'DELETE',
+        url: '/cart/' + id
+      }).then(function(response) {
+        // console.log(response.data);
+        return response.data;
+      });
+    };
+
 
   }); //end service

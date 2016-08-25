@@ -1,0 +1,22 @@
+.checkout-preview {
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-list {
+  width: 500px;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.checkout-list-thumbnail img{
+  height: 150px;
+  width: 150px;
+  float: left;
+  margin-right: 15px;
+}
+
+.delete-item {
+  float: right;
+}
