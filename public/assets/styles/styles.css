@@ -17,6 +17,10 @@
 .delete-item {
   float: right; }
 
+.order_summary_container {
+  float: right;
+  width: 400px; }
+
 .cp-full-layout {
   background-image: url("https://everlane-2.imgix.net/static/hero_assets/20160811_smokingloafer_hero.jpg");
   min-height: 500px;

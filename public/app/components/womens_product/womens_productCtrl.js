@@ -7,7 +7,6 @@ angular.module('app')
     womensProductService.getWomensProduct(id).then(function(response) {
 
       $scope.womensProduct = response[0];
-      console.log($scope.womensProduct);
       $scope.assets = response[0].image_urls_list;
       $scope.images = response[0].image_urls_list;
 
@@ -27,7 +26,6 @@ angular.module('app')
     //select size
     $scope.selectSize = function($index) {
       $scope.size = $index;
-      console.log($scope.size);
     };
 
     //add to cart
@@ -52,5 +50,5 @@ angular.module('app')
 
     console.log(checkUser);
     $scope.userNotLogged = checkUser;
-    
+
   }); //end controller

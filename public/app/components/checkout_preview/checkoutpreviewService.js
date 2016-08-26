@@ -33,5 +33,20 @@ angular.module('app')
       });
     };
 
+    this.changeQuantityInCart = function(newQuantity, id) {
+      var dataObj = {
+        newQuantity: newQuantity,
+        id: id
+      };
+      return $http({
+        method: 'PUT',
+        url: '/cart/quantity',
+        data: dataObj
+      }).then(function(response) {
+        // console.log(response.data);
+        return response.data;
+      });
+    };
+
 
   }); //end service

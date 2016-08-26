@@ -5,7 +5,6 @@ module.exports = {
 
 
     add_product_to_cart: function(req, res, next) {
-        console.log(req.body);
         db.add_cartorder([req.user.userid, req.body.productid, new Date(), req.body.size, 1], function(err, productid) {
                 res.status(200).send('it was good');
             });
@@ -13,7 +12,6 @@ module.exports = {
 
     get_cart: function(req, res, next) {
         db.get_cart(req.user.userid, function(err, product){
-          console.log(product);
           res.status(200).send(product);
         });
     },
@@ -29,6 +27,16 @@ module.exports = {
       db.delete_product_from_cart(req.params.id, function(err, products) {
         res.status(200).send('heyyy');
       });
+    },
+
+
+    update_quantity: function(req, res, next) {
+      db.update_cart_quantity(req.body.newQuantity, req.body.id, function(err, products) {
+      });
+      db.get_quantity_of_product_by_cartid(req.body.id, function(err, products) {
+        res.status(200).send(products);
+      });
     }
+
 
 }; //end controller
