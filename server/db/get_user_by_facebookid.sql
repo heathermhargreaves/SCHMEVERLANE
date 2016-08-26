@@ -1,3 +1,3 @@
 Select *
 from users
-Where facebookid = $1 
+Where facebookid = $1;

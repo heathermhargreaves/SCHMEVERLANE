@@ -36,7 +36,8 @@ CREATE TABLE cart
   userid int references users (userid),
   productid int references everlane_products (productid),
   orderdate timestamp with time zone,
-  size text
+  size text,
+  quantity integer
 );
 
 -- CREATE TABLE order_lines

@@ -1,6 +1,6 @@
-INSERT INTO cart (userid, productid, orderdate, size)
-VALUES ($1, $2, $3, $4);
+INSERT INTO cart (userid, productid, orderdate, size, quantity)
+VALUES ($1, $2, $3, $4, $5);
 
 -- example:
--- INSERT INTO carts (userid, productid, orderdate, size)
--- VALUES (2, 10, null, 'S');
+-- INSERT INTO cart (userid, productid, orderdate, size, quantity)
+-- VALUES (1, 10, null, 'S', 1);

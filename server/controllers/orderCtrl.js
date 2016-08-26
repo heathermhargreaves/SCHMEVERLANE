@@ -6,13 +6,14 @@ module.exports = {
 
     add_product_to_cart: function(req, res, next) {
         console.log(req.body);
-        db.add_cartorder([req.user.userid, req.body.productid, new Date(), req.body.size], function(err, productid) {
+        db.add_cartorder([req.user.userid, req.body.productid, new Date(), req.body.size, 1], function(err, productid) {
                 res.status(200).send('it was good');
             });
         },
 
     get_cart: function(req, res, next) {
         db.get_cart(req.user.userid, function(err, product){
+          console.log(product);
           res.status(200).send(product);
         });
     },

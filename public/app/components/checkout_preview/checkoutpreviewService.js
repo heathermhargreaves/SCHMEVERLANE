@@ -7,7 +7,7 @@ angular.module('app')
         method: 'GET',
         url: '/cart'
       }).then(function(response) {
-        // console.log(response.data);
+        console.log(response.data);
         return response.data;
       });
     };
