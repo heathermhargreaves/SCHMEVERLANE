@@ -29,6 +29,11 @@ module.exports = {
       });
     },
 
+    delete_cart: function(req, res, next) {
+      db.delete_cart_items_by_userid(req.user.userid, function(err, cart) {
+        res.status(200).send(cart);
+      });
+    },
 
     update_quantity: function(req, res, next) {
       db.update_cart_quantity(req.body.newQuantity, req.body.id, function(err, products) {

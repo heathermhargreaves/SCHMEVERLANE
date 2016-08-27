@@ -29,8 +29,16 @@ angular.module('app')
         checkoutpreviewService.deleteItemFromCart(id)
           .then(function(response) {
             $scope.getCart();
-          })
-      }
+          });
+      };
+
+      $scope.deleteCart = function() {
+        checkoutpreviewService.deleteCart()
+          .then(function(response) {
+            $scope.getCart();
+            $scop.getCartTotal();
+          });
+      };
 
       $scope.decrementQuantity = function(quantity, id) {
         var d = quantity - 1;

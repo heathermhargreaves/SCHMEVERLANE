@@ -144,6 +144,9 @@ app.post('/cart', orderCtrl.add_product_to_cart);
 //delete item from cart
 app.delete('/cart/:id', orderCtrl.delete_product_from_cart);
 
+//delete carte by userid
+app.delete('/cart', orderCtrl.delete_cart)
+
 ////////////////////////////////////////////////////
 ///////// PUT ENDPOINTS //////////////////////
 

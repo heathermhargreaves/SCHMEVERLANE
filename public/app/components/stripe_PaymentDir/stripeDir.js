@@ -1,8 +1,8 @@
 angular.module('app')
-.directive('stripePayment', function() {
+.directive('stripePayment', function($http) {
   return {
     restrict: 'E',
-    template: '<button id="customPaymentButton">Purchase</button>',
+    template: '<button id="customPaymentButton" ng-click="deleteCart()">Purchase</button>',
     controller: 'checkoutpreviewCtrl',
     link: function(scope, elem, attrs) {
       var handler = StripeCheckout.configure({

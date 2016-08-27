@@ -28,7 +28,17 @@ angular.module('app')
         method: 'DELETE',
         url: '/cart/' + id
       }).then(function(response) {
-        // console.log(response.data);
+        return response.data;
+      });
+    };
+
+    this.deleteCart = function() {
+      console.log();
+      return $http({
+        method: 'DELETE',
+        url: '/cart'
+      }).then(function(response) {
+        console.log(response.data);
         return response.data;
       });
     };
