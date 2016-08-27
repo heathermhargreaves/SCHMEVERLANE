@@ -23,29 +23,33 @@ angular.module('app')
 
 
 
-    //select size
-    $scope.selectSize = function($index) {
-      $scope.size = $index;
-    };
+
 
     //add to cart
     $scope.addToCart = function(product) {
       console.log(product);
 
-      if(!product.selectedSize) {
-        product.selectedSize = null;
+      if(product.sizes === null) {
+        product.selectedSize = 'One size';
       }
+      else if(!product.selectedSize) {
+        $scope.noSelectedSize = true;
+      }
+
 
       var selectedProduct = {
         productid: product.productid,
         size: product.selectedSize
       };
 
-      womensProductService.addToCart(selectedProduct)
-        .then(function(response) {
-          $scope.cart = response;
-          console.log($scope.cart);
-        });
+      if(product.selectedSize) {
+        womensProductService.addToCart(selectedProduct)
+          .then(function(response) {
+            $scope.cart = response;
+            console.log($scope.cart);
+          });
+      }
+
     };
 
     console.log(checkUser);

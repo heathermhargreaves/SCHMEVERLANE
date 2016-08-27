@@ -6,10 +6,17 @@ angular.module('app')
         checkoutpreviewService.getCart()
           .then(function(response) {
             $scope.cartItemsDetails = response;
+            if($scope.cartItemsDetails.length === 0) {
+              $scope.cartExists = false;
+            }
+            else {
+              $scope.cartExists = true;
+            }
           });
 
       };
       $scope.getCart();
+
 
 
       $scope.getCartTotal = function() {

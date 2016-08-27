@@ -1,6 +1,7 @@
 angular.module('app')
   .controller('mainCtrl', function ($scope, mainService, ngDialog) {
 
+
     $scope.clickToLogin = function () {
         ngDialog.open({
           template: './app/components/main/loginModal.html',
@@ -11,7 +12,7 @@ angular.module('app')
 
     // console.log(checkUser);
     // $scope.userNotLogged = checkUser;
-
+    //
     // console.log(checkUser);
 
 }); //end main controller

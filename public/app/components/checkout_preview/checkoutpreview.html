@@ -1,6 +1,11 @@
 <navbar-dir></navbar-dir>
 
-<section class="checkout-preview">
+<section ng-show="!cartExists">
+  <h1>Cart is empty</h1>
+  <a ui-sref="womens-all"> < Back to shopping</a>
+</section>
+
+<section class="checkout-preview" ng-show="cartExists">
   <a ui-sref="womens-all">Back to shopping</a>
 
   <div class="checkout-list" ng-repeat="product in cartItemsDetails">
