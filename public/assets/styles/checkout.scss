@@ -1,13 +1,19 @@
 .checkout-preview {
-  float: left;
+  // display: flex;
+  // flex-direction: column;
+  justify-content: space-around;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .checkout-list {
-  width: 500px;
-  flex-direction: row;
-  margin: 10px;
+  width: 450px;
+  float: left;
+  // margin-left: 150px;
+  margin: 10px 100px 10px 280px;
+  border-top: 1px solid #e9e9ec;
+  border-bottom: 1px solid #e9e9ec;
+  padding: 10px 0px 10px 0px;
 }
 
 .checkout-list-thumbnail img{
@@ -18,10 +24,126 @@
 }
 
 .delete-item {
+  font-size: 16px;
   float: right;
+  width: 20px;
+  height: 20px;
+  color: #dfe0e1;
+  cursor: pointer;
+}
+
+.subtract-item, .add-item {
+  font-size: 16px;
+  width: 20px;
+  height: 20px;
+  color: #dfe0e1;
+  cursor: pointer;
 }
 
 .order_summary_container {
+  width: 250px;
   float: right;
-  width: 400px;
+}
+
+.order-details {
+  width: 250px;
+  // justify-content: center;
+  // margin: 0px 0px 0px 40px;
+  margin-right: 50px;
+}
+
+// #order_summary {
+//   margin-right: 20px;
+// }
+
+#order_summary td {
+  border-top: 1px solid #e9e9ec;
+  vertical-align: middle;
+  padding: 20px 20px 20px 30px;
+  font-family: 'graphik', 'Helvetica Neue', 'Helvetica Neue LT STD', 'Helvetica', 'Helvetica LT STD', 'Arial', 'sans-serif';
+  color: #4c4c4b;
+  font-size: 13px;
+  line-height: 1.618em;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+#order_summary {
+  background-color: #F7F7F8;
+}
+
+#order_summary th {
+  font-size: 16px;
+  line-height: 25.888px;
+  font-weight: normal;
+  font-family: 'csb', 'Century Schoolbook', Georgia, serif;
+  font-style: normal;
+  color: #808284;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: normal;
+  vertical-align: middle;
+  padding: 15px;
+}
+
+#label {
+  width: 125px;
+  vertical-align: middle;
+  text-align: left;
+  // color: $steel;
+}
+
+#value {
+  width: 125px;
+  text-align: right;
+}
+
+stripe-payment button{
+  line-height: 22.652px;
+  font-family: 'graphik', 'Helvetica Neue', 'Helvetica Neue LT STD', 'Helvetica', 'Helvetica LT STD', 'Arial', 'sans-serif';
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  background-color: #4c4c4b;
+  border: 0;
+  cursor: pointer;
+  padding: 10px 35px;
+  color: #fff;
+  display: block;
+  float: right;
+  width: 250px;
+  font-size: 12px !important;
+  text-align: center;
+  // letter-spacing: 2px;
+  margin-top: 10px;
+  // margin-right: 20px;
+  width: 100%;
+}
+
+.order_summary_container {
+  width: 250px;
+  margin-right: 300px;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.add-item:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.subtract-item:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.delete-item:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-price {
+  float: right;
 }

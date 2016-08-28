@@ -36,6 +36,7 @@ angular.module('app')
         checkoutpreviewService.deleteItemFromCart(id)
           .then(function(response) {
             $scope.getCart();
+            $scope.getCartTotal();
           });
       };
 
@@ -43,7 +44,7 @@ angular.module('app')
         checkoutpreviewService.deleteCart()
           .then(function(response) {
             $scope.getCart();
-            $scop.getCartTotal();
+            $scope.getCartTotal();
           });
       };
 

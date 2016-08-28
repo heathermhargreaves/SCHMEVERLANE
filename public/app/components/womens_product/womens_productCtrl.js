@@ -1,8 +1,6 @@
 angular.module('app')
   .controller('womensProductCtrl', ($scope, trustedFilter, womensProductService, $stateParams, checkUser, ngDialog) => {
 
-    console.log(checkUser);
-    $scope.userNotLogged = checkUser;
     //returning product object based on id
     var id = $stateParams.id;
 
@@ -39,7 +37,7 @@ angular.module('app')
           controller: 'mainCtrl'
         });
       }
-    }
+    };
 
 
     //add to cart
@@ -61,7 +59,6 @@ angular.module('app')
         womensProductService.addToCart(selectedProduct)
           .then(function(response) {
             $scope.cart = response;
-            console.log($scope.cart);
           });
       }
 

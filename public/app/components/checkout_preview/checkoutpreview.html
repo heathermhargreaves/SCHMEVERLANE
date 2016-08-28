@@ -5,68 +5,62 @@
   <a ui-sref="womens-all"> < Back to shopping</a>
 </section>
 
-<section class="checkout-preview" ng-show="cartExists">
-  <a ui-sref="womens-all">Back to shopping</a>
+<!-- <a ui-sref="womens-all">Back to shopping</a> -->
 
+
+<section class="checkout-preview" ng-show="cartExists">
+
+<div class="checkout-summary">
   <div class="checkout-list" ng-repeat="product in cartItemsDetails">
-  <!-- merge the cartItems array above to cartItemsDetails with map -->
-<!-- ng-repeat="product in cartItemsDetail" -->
     <div class="checkout-list-thumbnail">
       <img  src="{{product.main_image_url}}">
     </div>
 
-    <p>{{product.product_name}}  {{product.price | currency:"$":0}}<a class="delete-item" ng-click="deleteItemFromCart(product.cartid)">x</a></p>
+    <p>{{product.product_name}} <a class="delete-item" ng-click="deleteItemFromCart(product.cartid)">x</a></p>
     <p>Size: {{product.size}}</p>
     <p>Color: {{product.color}}</p>
     <p>
-      <a ng-click='decrementQuantity(product.quantity, product.cartid); product.quantity = product.quantity - 1'> - </a>
+      <a class="subtract-item" ng-click='decrementQuantity(product.quantity, product.cartid); product.quantity = product.quantity - 1'> - </a>
       {{product.quantity}}
-      <a ng-click='incrementQuantity(product.quantity, product.cartid); product.quantity = product.quantity + 1'> + </a>
+      <a class="add-item" ng-click='incrementQuantity(product.quantity, product.cartid); product.quantity = product.quantity + 1'> + </a>
+      <p class='product-price'> {{product.price | currency:"$":0}} </h6>
     </p>
 
   </div>
+</div>
+
 
 
   <div class="order_summary_container">
-    <div id="order-details">
+    <div class="order-details">
       <table class="order-summary" id="order_summary">
         <tbody>
           <tr>
             <th colspan="2">Order Summary</th>
           </tr>
           <tr>
-            <td class="label">Subtotal</td>
-            <td class="value">{{orderTotal | currency:"$":0}}</td>
+            <td id="label">Subtotal</td>
+            <td id="value">{{orderTotal | currency:"$":0}}</td>
           </tr>
           <tr>
-            <td class="label">Shipping</td>
-            <td class="value">{{shipping | currency}}</td>
+            <td id="label">Shipping</td>
+            <td id="value">{{shipping | currency}}</td>
           </tr>
           <tr>
-            <td class="label">Tax</td>
-            <td class="value">{{tax | currency}}</td>
+            <td id="label">Tax</td>
+            <td id="value">{{tax | currency}}</td>
           </tr>
           <tr>
-            <td class="label">Total</td>
-            <td class="value">{{total | currency}}</td>
+            <td id="label">Total</td>
+            <td id="value">{{total | currency}}</td>
           </tr>
         </tbody>
       </table>
+
+      <stripe-payment></stripe-payment>
+
     </div>
   </div>
 
-<stripe-payment></stripe-payment>
-<!-- <form action="/api/charge" method="POST" id="stripeForm">
-  <input type="hidden" name="price" value="{{total}}" />
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="cart-charge-checkout"
-    data-key="pk_test_hC6fkYywOPHze3b3UZhEwjPN"
-
-    data-name="Everlane checkout"
-    data-description="Your final cart total is"
-    data-image="https://pbs.twimg.com/profile_images/684546698538926081/N0kGR9pm.jpg"
-    data-locale="auto">
-  </script>
-</form> -->
 
 </section>

@@ -10,9 +10,5 @@ angular.module('app')
         });
     };
 
-    // console.log(checkUser);
-    // $scope.userNotLogged = checkUser;
-    //
-    // console.log(checkUser);
 
 }); //end main controller

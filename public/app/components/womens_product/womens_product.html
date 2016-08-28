@@ -1,8 +1,6 @@
 <navbar-dir></navbar-dir>
 
 <section class="product-gallery">
-  <!-- {{womensProduct.featured_type}}
-  {{womensProduct.price}} -->
   <!-- product thumbnail gallery -->
 <div class="product-gallery-thumbs col-xs-1" >
   <img class="product-thumb" ng-repeat="image in assets" src="{{image}}">
@@ -82,4 +80,7 @@
 
   </div> <!-- end product info div -->
 
+  <div class="transparent">
+    <img class="transparent-pricing" src="{{womensProduct.transparent_pricing_url}}" alt="" />
+  </div>
 </section>
