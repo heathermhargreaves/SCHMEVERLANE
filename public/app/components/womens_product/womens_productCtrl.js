@@ -36,25 +36,26 @@ angular.module('app')
         $scope.noSelectedSize = true;
       }
 
-        // else {
-        //   $scope.noSelectedSize = false;
-        // }
 
       var selectedProduct = {
         productid: product.productid,
         size: product.selectedSize
       };
 
+
       if(product.selectedSize) {
+        $scope.noSelectedSize = false;
         womensProductService.addToCart(selectedProduct)
           .then(function(response) {
             $scope.cart = response;
+
           });
       }
     };
 
     //check if user is logged in
     $scope.checkIfUserCanAdd = function() {
+      console.log($scope.noSelectedSize);
       if(!$scope.userNotLogged) {
         ngDialog.open({
           template: './app/components/modal_templates/cannot_add_to_cart_login.html',
@@ -62,7 +63,7 @@ angular.module('app')
           controller: 'mainCtrl'
         });
       }
-     else if (!$scope.noSelectedSize) {
+     else if ($scope.noSelectedSize === false) {
         ngDialog.open({
           template: './app/components/modal_templates/added_item_to_cart.html',
           className: 'ngdialog-theme-plain',
