@@ -3,7 +3,7 @@
 <section class="product-gallery">
   <!-- product thumbnail gallery -->
 <div class="product-gallery-thumbs col-xs-1" >
-  <img class="product-thumb" ng-repeat="image in assets track by $index" src="{{image}}">
+  <img class="product-thumb" ng-repeat="image in assets" src="{{image}}">
 
     <!-- ng-repeat="thumb in assets" -->
   </img>
@@ -11,7 +11,7 @@
 
 <!-- product image gallery -->
 <div class="product-gallery-assets col-xs-7">
-  <img class="product-asset" ng-repeat="image in assets track by $index" src="{{image}}">
+  <img class="product-asset" ng-repeat="image in assets" src="{{image}}">
 
   </img>
 </div>

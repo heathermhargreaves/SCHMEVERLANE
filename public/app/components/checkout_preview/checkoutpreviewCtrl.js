@@ -1,6 +1,8 @@
 angular.module('app')
   .controller('checkoutpreviewCtrl', function($scope, checkoutpreviewService, womensProductService) {
 
+    // console.log(checkUser);
+    // $scope.userNotLogged = checkUser;
 
       $scope.getCart = function() {
         checkoutpreviewService.getCart()

@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('womensProductCtrl', ($scope, trustedFilter, womensProductService, $stateParams, checkUser, ngDialog) => {
+  .controller('womensProductCtrl', ($scope, womensProductService, $stateParams, checkUser, ngDialog) => {
 
     //returning product object based on id
     var id = $stateParams.id;
@@ -20,19 +20,25 @@ angular.module('app')
     });
 
 
-
-
-
-
     //add to cart
     $scope.addToCart = function(product) {
 
       if(product.sizes === null) {
         product.selectedSize = 'One size';
+        $scope.noSelectedSize = false;
+        ngDialog.open({
+          template: './app/components/modal_templates/added_item_to_cart.html',
+          className: 'ngdialog-theme-plain',
+          controller: 'mainCtrl'
+        });
       }
       else if(!product.selectedSize) {
         $scope.noSelectedSize = true;
       }
+
+        // else {
+        //   $scope.noSelectedSize = false;
+        // }
 
       var selectedProduct = {
         productid: product.productid,
@@ -45,8 +51,6 @@ angular.module('app')
             $scope.cart = response;
           });
       }
-
-
     };
 
     //check if user is logged in
@@ -58,7 +62,7 @@ angular.module('app')
           controller: 'mainCtrl'
         });
       }
-      else if ($scope.noSelectedSize) {
+     else if (!$scope.noSelectedSize) {
         ngDialog.open({
           template: './app/components/modal_templates/added_item_to_cart.html',
           className: 'ngdialog-theme-plain',

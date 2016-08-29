@@ -416,6 +416,12 @@ a {
 .facebook-flat:hover {
   background-color: #294172; }
 
+.back-to-shopping, .send-to-checkout {
+  color: inherit; }
+
+.send-to-checkout {
+  float: right; }
+
 .cp-content {
   margin: auto;
   max-width: 100vw;

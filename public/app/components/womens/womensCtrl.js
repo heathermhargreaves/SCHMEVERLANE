@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('womensCtrl', function($scope, trustedFilter, womensService, checkUser) {
+  .controller('womensCtrl', function($scope, womensService, checkUser) {
 
     $scope.getAllWomensProducts = function() {
       womensService.getAllWomensProducts()
