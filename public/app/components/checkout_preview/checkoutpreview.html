@@ -1,8 +1,8 @@
 <navbar-dir></navbar-dir>
 
-<section ng-show="!cartExists">
+<section class='empty-cart-message' ng-show="!cartExists">
   <h1>Cart is empty</h1>
-  <a ui-sref="womens-all"> < Back to shopping</a>
+  <a class="back-to-shopping" ui-sref="womens-all"> <span class="glyphicon glyphicon-menu-left bounce" aria-hidden="true"></span>Back to shopping</a>
 </section>
 
 <!-- <a ui-sref="womens-all">Back to shopping</a> -->
@@ -31,7 +31,7 @@
 
 
 
-  <div class="order_summary_container">
+  <div class="order_summary_container" ng-show="cartExists" ng-hide="!userNotLogged">
     <div class="order-details">
       <table class="order-summary" id="order_summary">
         <tbody>

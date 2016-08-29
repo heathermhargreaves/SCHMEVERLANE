@@ -21,23 +21,7 @@ angular.module('app')
 
 
 
-    //check if user is logged in
-    $scope.checkIfUserCanAdd = function() {
-      if(!$scope.userNotLogged) {
-        ngDialog.open({
-          template: './app/components/modal_templates/cannot_add_to_cart_login.html',
-          className: 'ngdialog-theme-plain',
-          controller: 'mainCtrl'
-        });
-      }
-      else {
-        ngDialog.open({
-          template: './app/components/modal_templates/added_item_to_cart.html',
-          className: 'ngdialog-theme-plain',
-          controller: 'mainCtrl'
-        });
-      }
-    };
+
 
 
     //add to cart
@@ -63,6 +47,24 @@ angular.module('app')
       }
 
 
+    };
+
+    //check if user is logged in
+    $scope.checkIfUserCanAdd = function() {
+      if(!$scope.userNotLogged) {
+        ngDialog.open({
+          template: './app/components/modal_templates/cannot_add_to_cart_login.html',
+          className: 'ngdialog-theme-plain',
+          controller: 'mainCtrl'
+        });
+      }
+      else if ($scope.noSelectedSize) {
+        ngDialog.open({
+          template: './app/components/modal_templates/added_item_to_cart.html',
+          className: 'ngdialog-theme-plain',
+          controller: 'mainCtrl'
+        });
+      }
     };
 
     console.log(checkUser);

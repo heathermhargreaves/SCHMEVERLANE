@@ -12,10 +12,17 @@
     <div class="product-grouping">
 
 
-        <div class="product-display" ng-repeat="color in value">
-          <img class="product-image" src="{{color.image | trusted}}"
+        <div class="product-display" ng-repeat="color in value" >
+          <img class="product-image" ng-src="{{color.images[0]}}"
           ng-click="getWomensProduct(id)" ui-sref="womens-product({ id: color.id })">
           </img>
+
+          <!-- <div class="special-image" ng-init="imgsrc={{color.images[0]}}" ng-mouseover="imgsrc={{color.images[1]}}" ng-mouseout="{{color.images[0]}}">
+            <img class="product-image" ng-src="{{imgsrc}}"
+            ng-click="getWomensProduct(id)" ui-sref="womens-product({ id: color.id })">
+            </img>
+          </div> -->
+
 
           <h6>
             {{key}} - ${{color.price}}
